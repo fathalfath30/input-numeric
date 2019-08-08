@@ -21,3 +21,16 @@
  // never gonna say goodbye. Never gonna tell a lie and hurt you.
  //
 */
+(function ($) {
+    "use strict";
+    function is_number (evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+
+        return (charCode > 31 && (charCode < 48 || charCode > 57));
+    }
+
+    $ (".input-number").on ('keypress', function (event) {
+        return is_number (event);
+    });
+}) (jQuery);
